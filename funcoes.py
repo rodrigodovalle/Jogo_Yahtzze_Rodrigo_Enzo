@@ -81,3 +81,44 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
     novos_dados_no_estoque.append(valor)
 
     return [novos_dados_rolados, novos_dados_no_estoque]
+
+
+# No jogo de dados, também é possível remover os dados já armazenados.
+
+# Precisamos implementar a função remover_dado no arquivo funcoes.py.
+# A função recebe:
+# uma lista de dados rolados
+# uma lista de dados já guardados
+# um número inteiro com o índice do dado a ser removido
+
+# A função deve retornar uma lista com dois valores:
+# o primeiro é a lista de dados rolados atualizada
+# o segundo é a lista de dados no estoque
+
+# Exemplo:
+
+# dados_rolados = [2, 2, 2, 2]
+# dados_no_estoque = [1]
+# dado_para_remover = 0
+
+# print(remover_dado(dados_rolados, dados_no_estoque, dado_para_remover))
+
+# Saída:
+# [[2, 2, 2, 2, 1], []]
+
+# Explicação:
+# o jogador tem o dado [1] guardado
+# ele decide remover esse dado do estoque
+
+# a função deve:
+# remover o valor da lista dados_no_estoque
+# adicionar esse valor na lista dados_rolados
+
+def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
+    novo_estoque = []
+    for i in range(len(dados_no_estoque)):
+        if i == dado_para_remover:
+            dados_rolados = dados_rolados + [dados_no_estoque[i]]
+        else:
+            novo_estoque = novo_estoque + [dados_no_estoque[i]]
+    return [dados_rolados, novo_estoque]

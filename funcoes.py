@@ -173,3 +173,30 @@ def calcula_pontos_sequencia_alta(dados):
 
     return 0
 
+# Ex 8 
+
+def calcula_pontos_full_house(dados):
+    contagem = {}
+
+    for dado in dados:
+        if dado in contagem:
+            contagem[dado] += 1
+        else:
+            contagem[dado] = 1
+
+    tem_tres = False
+    tem_dois = False
+
+    for valor in contagem.values():
+        if valor == 3:
+            tem_tres = True
+        if valor == 2:
+            tem_dois = True
+
+    if tem_tres and tem_dois:
+        soma = 0
+        for dado in dados:
+            soma += dado
+        return soma
+
+    return 0

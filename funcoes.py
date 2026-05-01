@@ -148,4 +148,17 @@ def calcula_pontos_soma(dados):
 
     return soma
 
+# Ex 6
+
+def calcula_pontos_sequencia_baixa(dados):
+    unicos = sorted(set(dados))
+
+    for i in range(len(unicos) - 3):
+        if (unicos[i] + 1 == unicos[i+1] and
+            unicos[i] + 2 == unicos[i+2] and
+            unicos[i] + 3 == unicos[i+3]):
+            return 15
+
+    return 0
+
 

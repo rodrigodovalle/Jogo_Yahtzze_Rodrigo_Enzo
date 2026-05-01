@@ -122,3 +122,19 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
         else:
             novo_estoque = novo_estoque + [dados_no_estoque[i]]
     return [dados_rolados, novo_estoque]
+
+
+#Ex 4
+
+def calcula_pontos_regra_simples(dados):
+    pontos = {}
+
+    for numero in range(1, 7):
+        soma = 0
+        for dado in dados:
+            if dado == numero:
+                soma += dado
+        pontos[numero] = soma
+
+    return pontos
+

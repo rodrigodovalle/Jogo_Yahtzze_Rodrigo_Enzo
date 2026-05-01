@@ -220,4 +220,17 @@ def calcula_pontos_quadra(dados):
 
     return 0
 
+# Ex 10
+
+def calcula_pontos_quina(dados):
+    contagens = [0] * 7
+
+    for dado in dados:
+        contagens[dado] += 1
+
+    for quantidade in contagens:
+        if quantidade >= 5:
+            return 50
+
+    return 0
 
